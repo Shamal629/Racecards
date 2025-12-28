@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racecards Art Gallery | Pokémon Style Display</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-cards"></i>
+                <span>Racecards Gallery</span>
+            </div>
+            <div class="nav-links">
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Collectible Art Cards</h1>
+            <p>Each artwork displayed like a Pokémon trading card</p>
+        </div>
+    </header>
+
+    <!-- Gallery Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Art</button>
+        <button class="filter-btn" data-filter="painting">Paintings</button>
+        <button class="filter-btn" data-filter="digital">Digital</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
+        <button class="filter-btn" data-filter="traditional">Traditional</button>
+    </div>
+
+    <!-- Pokémon Card Grid Gallery -->
+    <main id="gallery">
+        <div class="gallery-container">
+            <!-- Card 1 -->
+            <div class="art-card" data-category="painting" data-id="1">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=600" alt="Abstract Painting">
+                            <div class="art-type">Painting</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Golden Sunset</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Alex Morgan</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <p class="art-description">Vibrant acrylic painting capturing the golden hour with bold brush strokes.</p>
+                            <div class="card-footer">
+                                <span class="price">$420</span>
+                                <button class="view-btn" onclick="viewArtDetail(1)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="art-card" data-category="digital" data-id="2">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=600" alt="Digital Art">
+                            <div class="art-type">Digital</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Neon Dreams</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Sam Chen</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <p class="art-description">Cyberpunk cityscape with neon lights and holographic elements.</p>
+                            <div class="card-footer">
+                                <span class="price">$350</span>
+                                <button class="view-btn" onclick="viewArtDetail(2)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="art-card" data-category="photography" data-id="3">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600" alt="Mountain Photography">
+                            <div class="art-type">Photography</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Alpine Majesty</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Jordan Lee</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <p class="art-description">Landscape photography of Swiss Alps at dawn, limited edition print.</p>
+                            <div class="card-footer">
+                                <span class="price">$280</span>
+                                <button class="view-btn" onclick="viewArtDetail(3)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="art-card" data-category="traditional" data-id="4">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600" alt="Charcoal Drawing">
+                            <div class="art-type">Traditional</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Silent Portrait</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Maria Garcia</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                            <p class="art-description">Charcoal and graphite portrait study, emotional depth captured.</p>
+                            <div class="card-footer">
+                                <span class="price">$390</span>
+                                <button class="view-btn" onclick="viewArtDetail(4)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="art-card" data-category="digital" data-id="5">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=600" alt="3D Render">
+                            <div class="art-type">3D Art</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Floating Islands</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Tech Artist</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2024</span>
+                            </div>
+                            <p class="art-description">Fantasy landscape with floating islands and magical atmosphere.</p>
+                            <div class="card-footer">
+                                <span class="price">$450</span>
+                                <button class="view-btn" onclick="viewArtDetail(5)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="art-card" data-category="painting" data-id="6">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600" alt="Oil Painting">
+                            <div class="art-type">Oil Painting</div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="art-title">Mediterranean Coast</h3>
+                            <div class="art-details">
+                                <span class="artist"><i class="fas fa-user"></i> Claude Monet</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <p class="art-description">Oil on canvas, impressionist style coastal scene with vibrant colors.</p>
+                            <div class="card-footer">
+                                <span class="price">$520</span>
+                                <button class="view-btn" onclick="viewArtDetail(6)">View Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Racecards Gallery</h2>
+        <p>Each artwork is presented like a collectible Pokémon trading card, with key details visible at a glance. Click "View Card" to see the full artwork, detailed description, and purchase information.</p>
+        <p>All pieces are original and available for sale. Commission inquiries welcome.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact the Artist</h2>
+        <p>For purchase inquiries, commissions, or questions:</p>
+        <a href="mailto:example@racecards.com?subject=Art%20Inquiry" class="contact-btn">
+            <i class="fas fa-envelope"></i> Email Now
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Racecards Art Gallery &copy; 2024 | Built with GitHub Pages | Card-style Display</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
