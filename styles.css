@@ -304,18 +304,32 @@ footer {
     color: #a0a0c0;
 }
 
-/* Responsive Design */
+/* Responsive Design - TABLETS */
 @media (max-width: 768px) {
+    /* Navigation fix for tablets */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    /* Gallery layout for tablets */
     .gallery-container {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
     
     .hero h1 {
         font-size: 2.5rem;
-    }
-    
-    .nav-links {
-        gap: 15px;
     }
     
     .filters {
@@ -328,7 +342,23 @@ footer {
     }
 }
 
+/* Responsive Design - MOBILE PHONES */
 @media (max-width: 480px) {
+    /* Navigation fix for small phones */
+    .nav-links {
+        gap: 8px;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    .logo span {
+        font-size: 1.5rem;
+    }
+    
+    /* Single column layout for phones */
     .gallery-container {
         grid-template-columns: 1fr;
     }
@@ -337,7 +367,42 @@ footer {
         font-size: 2rem;
     }
     
-    .logo span {
+    /* Smaller filter buttons for phones */
+    .filters {
+        gap: 5px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 360px) {
+    .nav-links {
+        gap: 5px;
+    }
+    
+    .nav-links a {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    .logo {
         font-size: 1.5rem;
+    }
+    
+    .logo i {
+        font-size: 1.8rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .filter-btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
     }
 }
