@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Details | Racecards Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .art-detail-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #3a3f5b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #4a4f6b;
+            transform: translateX(-5px);
+        }
+        
+        .art-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: rgba(42, 45, 66, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #3a3f5b;
+        }
+        
+        .art-detail-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border: 5px solid #2a2d42;
+        }
+        
+        .art-detail-info h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+        
+        .art-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+            color: #a0a0c0;
+        }
+        
+        .art-meta div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .art-meta i {
+            color: #ffcc00;
+        }
+        
+        .price-tag {
+            font-size: 2.8rem;
+            color: #ffcc00;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+        
+        .full-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #c0c0e0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .purchase-btn, .inquiry-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .purchase-btn {
+            background: linear-gradient(45deg, #00b09b, #96c93d);
+            color: white;
+            flex: 2;
+        }
+        
+        .inquiry-btn {
+            background: #3498db;
+            color: white;
+            flex: 1;
+        }
+        
+        .purchase-btn:hover, .inquiry-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .specs-table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+        
+        .specs-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #3a3f5b;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: #a0a0c0;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 900px) {
+            .art-detail-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-cards"></i>
+                <span>Racecards Gallery</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="art-detail-container">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Gallery
+        </a>
+        
+        <div class="art-detail-content">
+            <div class="art-detail-image">
+                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1200" alt="Artwork" id="detail-image">
+            </div>
+            
+            <div class="art-detail-info">
+                <h1 id="art-title">Golden Sunset</h1>
+                
+                <div class="art-meta">
+                    <div>
+                        <i class="fas fa-user"></i>
+                        <span id="artist-name">Alex Morgan</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-calendar"></i>
+                        <span id="art-year">2023</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-paint-brush"></i>
+                        <span id="art-medium">Acrylic on Canvas</span>
+                    </div>
+                </div>
+                
+                <div class="price-tag" id="art-price">$420</div>
+                
+                <div class="full-description" id="art-description">
+                    This vibrant acrylic painting captures the breathtaking beauty of the golden hour. 
+                    Created with bold brush strokes and a rich color palette, the artwork measures 24 × 36 inches. 
+                    Each layer was carefully applied to create depth and texture. The painting is framed in a 
+                    natural wood frame and ready to hang. Certificate of authenticity included.
+                </div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td class="spec-label">Dimensions:</td>
+                        <td id="dimensions">24 × 36 inches (61 × 91 cm)</td>
+                    </tr>
+                    <tr>
+                        <td class="spec-label">Medium:</td>
+                        <td id="medium-detail">Acrylic on stretched canvas</td>
+                    </tr>
+                    <tr>
+                        <td class="spec-label">Framing:</td>
+                        <td id="framing">Natural wood frame, ready to hang</td>
+                    </tr>
+                    <tr>
+                        <td class="spec-label">Shipping:</td>
+                        <td id="shipping">Free worldwide shipping</td>
+                    </tr>
+                    <tr>
+                        <td class="spec-label">Certificate:</td>
+                        <td id="certificate">Includes certificate of authenticity</td>
+                    </tr>
+                </table>
+                
+                <div class="action-buttons">
+                    <button class="purchase-btn" onclick="purchaseArt()">
+                        <i class="fas fa-shopping-cart"></i> Purchase Now
+                    </button>
+                    <button class="inquiry-btn" onclick="contactArtist()">
+                        <i class="fas fa-envelope"></i> Inquire
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Racecards Art Gallery &copy; 2024 | Built with GitHub Pages</p>
+    </footer>
+
+    <script>
+        // Get art ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const artId = urlParams.get('id') || '1';
+        
+        // Art data - in Phase 2, you'll fetch this from JSON
+        const artData = {
+            '1': {
+                title: 'Golden Sunset',
+                artist: 'Alex Morgan',
+                year: '2023',
+                medium: 'Acrylic on Canvas',
+                price: '$420',
+                description: 'This vibrant acrylic painting captures the breathtaking beauty of the golden hour. Created with bold brush strokes and a rich color palette.',
+                dimensions: '24 × 36 inches (61 × 91 cm)',
+                mediumDetail: 'Acrylic on stretched canvas',
+                framing: 'Natural wood frame, ready to hang',
+                shipping: 'Free worldwide shipping',
+                certificate: 'Includes certificate of authenticity',
+                image: 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=1200'
+            },
+            '2': {
+                title: 'Neon Dreams',
+                artist: 'Sam Chen',
+                year: '2024',
+                medium: 'Digital Art',
+                price: '$350',
+                description: 'Cyberpunk cityscape with neon lights and holographic elements. Created using advanced digital painting techniques.',
+                dimensions: 'Digital file (4000 × 3000 px)',
+                mediumDetail: 'Digital painting & rendering',
+                framing: 'Digital download or printed on demand',
+                shipping: 'Instant digital download',
+                certificate: 'Digital certificate of authenticity',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=1200'
+            }
+        };
+        
+        // Update page with art data
+        if (artData[artId]) {
+            const art = artData[artId];
+            document.getElementById('art-title').textContent = art.title;
+            document.getElementById('artist-name').textContent = art.artist;
+            document.getElementById('art-year').textContent = art.year;
+            document.getElementById('art-medium').textContent = art.medium;
+            document.getElementById('art-price').textContent = art.price;
+            document.getElementById('art-description').textContent = art.description;
+            document.getElementById('dimensions').textContent = art.dimensions;
+            document.getElementById('medium-detail').textContent = art.mediumDetail;
+            document.getElementById('framing').textContent = art.framing;
+            document.getElementById('shipping').textContent = art.shipping;
+            document.getElementById('certificate').textContent = art.certificate;
+            document.getElementById('detail-image').src = art.image;
+            document.getElementById('detail-image').alt = art.title;
+        }
+        
+        function purchaseArt() {
+            const artTitle = document.getElementById('art-title').textContent;
+            alert(`Purchase functionality coming soon!\nArtwork: ${artTitle}`);
+            // Future: Redirect to payment page or e-commerce platform
+        }
+        
+        function contactArtist() {
+            const artTitle = document.getElementById('art-title').textContent;
+            const artistName = document.getElementById('artist-name').textContent;
+            const subject = `Inquiry about: ${artTitle}`;
+            const body = `Hello ${artistName},\n\nI am interested in purchasing "${artTitle}".\n\nPlease send me more information.`;
+            window.location.href = `mailto:example@racecards.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
