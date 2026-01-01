@@ -3,64 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Racecards Art Gallery | Pokémon Style Display</title>
+    <title>Racecards Web3 | Digital Car Trading Cards</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
             <div class="logo">
-                <i class="fas fa-cards"></i>
-                <span>Racecards Gallery</span>
+                <i class="fas fa-car"></i>
+                <span>RACECARDS WEB3</span>
             </div>
             <div class="nav-links">
                 <a href="#gallery">Gallery</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
+                <a href="#" class="wallet-btn" id="connectWallet">
+                    <i class="fas fa-wallet"></i> Connect Wallet
+                </a>
             </div>
         </nav>
         <div class="hero">
-            <h1>Collectible Art Cards</h1>
-            <p>Each and Every artwork tells a story</p>
+            <h1>DIGITAL CAR TRADING CARDS</h1>
+            <p>Collect, Trade, and Own Exclusive Digital Car Cards on the Blockchain</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">1,234</span>
+                    <span class="stat-label">Cards Minted</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">892</span>
+                    <span class="stat-label">Active Traders</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">456</span>
+                    <span class="stat-label">ETH Volume</span>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Gallery Filters -->
     <div class="filters">
-        <button class="filter-btn active" data-filter="all">All Arts</button>
-        <button class="filter-btn" data-filter="painting">Classicard</button>
-        <button class="filter-btn" data-filter="painting">Electricard</button>
-        <button class="filter-btn" data-filter="painting">Sportscard</button>
-        <button class="filter-btn" data-filter="digital">Supercard</button>
-        <button class="filter-btn" data-filter="photography">Hypercard</button>
-        <button class="filter-btn" data-filter="traditional">Monstercard</button>
+        <button class="filter-btn active" data-filter="all">All Cards</button>
+        <button class="filter-btn" data-filter="supercar">Supercars</button>
+        <button class="filter-btn" data-filter="hypercar">Hypercars</button>
+        <button class="filter-btn" data-filter="classic">Classics</button>
+        <button class="filter-btn" data-filter="racing">Racing</button>
+        <button class="filter-btn" data-filter="jdm">JDM</button>
+        <button class="filter-btn" data-filter="electric">Electric</button>
     </div>
 
-    <!-- Pokémon Card Grid Gallery -->
+    <!-- Trading Card Grid Gallery -->
     <main id="gallery">
         <div class="gallery-container">
             <!-- Card 1 -->
-            <div class="art-card" data-category="painting" data-id="1">
+            <div class="art-card" data-category="supercar" data-id="1">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=600" alt="Abstract Painting">
-                            <div class="art-type">Painting</div>
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600" alt="Supercar">
+                            <div class="art-type">Supercar</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Golden Sunset</h3>
+                            <h3 class="art-title">LA FERRARI</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Alex Morgan</span>
+                                <span class="artist"><i class="fas fa-gas-pump"></i> V12 Hybrid</span>
                                 <span class="year"><i class="fas fa-calendar"></i> 2023</span>
                             </div>
-                            <p class="art-description">Vibrant acrylic painting capturing the golden hour with bold brush strokes.</p>
+                            <p class="art-description">Limited edition hypercar with 950HP hybrid powertrain. Only 500 units worldwide.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">950</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">2.4s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">217</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$420</span>
-                                <button class="view-btn" onclick="viewArtDetail(1)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>1.8 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(1)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -68,23 +106,43 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="art-card" data-category="digital" data-id="2">
+            <div class="art-card" data-category="hypercar" data-id="2">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=600" alt="Digital Art">
-                            <div class="art-type">Digital</div>
+                            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600" alt="Hypercar">
+                            <div class="art-type">Hypercar</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Neon Dreams</h3>
+                            <h3 class="art-title">BUGATTI CHIRON</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Sam Chen</span>
+                                <span class="artist"><i class="fas fa-gas-pump"></i> W16 8.0L</span>
                                 <span class="year"><i class="fas fa-calendar"></i> 2024</span>
                             </div>
-                            <p class="art-description">Cyberpunk cityscape with neon lights and holographic elements.</p>
+                            <p class="art-description">Quad-turbocharged masterpiece with 1,500HP. The ultimate speed machine.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">1500</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">2.3s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">261</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$350</span>
-                                <button class="view-btn" onclick="viewArtDetail(2)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>3.2 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(2)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -92,23 +150,43 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="art-card" data-category="photography" data-id="3">
+            <div class="art-card" data-category="classic" data-id="3">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600" alt="Mountain Photography">
-                            <div class="art-type">Photography</div>
+                            <img src="https://images.unsplash.com/photo-1502164980785-f8aa41d53611?auto=format&fit=crop&w=600" alt="Classic Car">
+                            <div class="art-type">Classic</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Alpine Majesty</h3>
+                            <h3 class="art-title">FERRARI 250 GTO</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Jordan Lee</span>
-                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                                <span class="artist"><i class="fas fa-gas-pump"></i> V12 3.0L</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 1962</span>
                             </div>
-                            <p class="art-description">Landscape photography of Swiss Alps at dawn, limited edition print.</p>
+                            <p class="art-description">The most valuable car in history. Only 36 units ever produced.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">300</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">6.1s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">152</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$280</span>
-                                <button class="view-btn" onclick="viewArtDetail(3)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>8.5 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(3)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -116,23 +194,43 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="art-card" data-category="traditional" data-id="4">
+            <div class="art-card" data-category="racing" data-id="4">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600" alt="Charcoal Drawing">
-                            <div class="art-type">Traditional</div>
+                            <img src="https://images.unsplash.com/photo-1617654116851-8daa20b8f349?auto=format&fit=crop&w=600" alt="Racing Car">
+                            <div class="art-type">Racing</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Silent Portrait</h3>
+                            <h3 class="art-title">MCLAREN F1 GTR</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Maria Garcia</span>
-                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                                <span class="artist"><i class="fas fa-gas-pump"></i> V12 6.1L</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 1995</span>
                             </div>
-                            <p class="art-description">Charcoal and graphite portrait study, emotional depth captured.</p>
+                            <p class="art-description">Le Mans 24h winner. Road car transformed into racing legend.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">600</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">3.2s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">215</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$390</span>
-                                <button class="view-btn" onclick="viewArtDetail(4)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>4.7 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(4)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -140,23 +238,43 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="art-card" data-category="digital" data-id="5">
+            <div class="art-card" data-category="jdm" data-id="5">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=600" alt="3D Render">
-                            <div class="art-type">3D Art</div>
+                            <img src="https://images.unsplash.com/photo-1563720223484-21c6c2d3c340?auto=format&fit=crop&w=600" alt="JDM Car">
+                            <div class="art-type">JDM</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Floating Islands</h3>
+                            <h3 class="art-title">NISSAN GT-R R34</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Tech Artist</span>
-                                <span class="year"><i class="fas fa-calendar"></i> 2024</span>
+                                <span class="artist"><i class="fas fa-gas-pump"></i> RB26DETT</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 1999</span>
                             </div>
-                            <p class="art-description">Fantasy landscape with floating islands and magical atmosphere.</p>
+                            <p class="art-description">The legendary Godzilla. Japanese domestic market icon.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">276</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">4.9s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">155</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$450</span>
-                                <button class="view-btn" onclick="viewArtDetail(5)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>2.1 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(5)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -164,23 +282,43 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="art-card" data-category="painting" data-id="6">
+            <div class="art-card" data-category="electric" data-id="6">
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600" alt="Oil Painting">
-                            <div class="art-type">Oil Painting</div>
+                            <img src="https://images.unsplash.com/photo-1624702046625-6247c5f4d56a?auto=format&fit=crop&w=600" alt="Electric Car">
+                            <div class="art-type">Electric</div>
+                            <div class="web3-badge">
+                                <i class="fab fa-ethereum"></i> NFT
+                            </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="art-title">Mediterranean Coast</h3>
+                            <h3 class="art-title">RIMAC NEVERA</h3>
                             <div class="art-details">
-                                <span class="artist"><i class="fas fa-user"></i> Claude Monet</span>
+                                <span class="artist"><i class="fas fa-bolt"></i> Electric</span>
                                 <span class="year"><i class="fas fa-calendar"></i> 2023</span>
                             </div>
-                            <p class="art-description">Oil on canvas, impressionist style coastal scene with vibrant colors.</p>
+                            <p class="art-description">All-electric hypercar with 1,914HP. World's fastest accelerating production car.</p>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">1914</span>
+                                    <span class="stat-label">HP</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">1.85s</span>
+                                    <span class="stat-label">0-60</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">258</span>
+                                    <span class="stat-label">MPH</span>
+                                </div>
+                            </div>
                             <div class="card-footer">
-                                <span class="price">$520</span>
-                                <button class="view-btn" onclick="viewArtDetail(6)">View Card</button>
+                                <div class="price">
+                                    <i class="fab fa-ethereum"></i>
+                                    <span>3.8 ETH</span>
+                                </div>
+                                <button class="view-btn" onclick="viewCardDetail(6)">View Card</button>
                             </div>
                         </div>
                     </div>
@@ -191,23 +329,69 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <h2>About Racecards Gallery</h2>
-        <p>Each artwork is presented like a collectible trading Racecard, with key details visible at a glance. Click "View Card" to see the full artwork, detailed description, and purchase information.</p>
-        <p>All pieces are original and available for sale. Commission inquiries welcome.</p>
+        <h2>ABOUT RACECARDS WEB3</h2>
+        <p>Racecards Web3 is revolutionizing car collecting through blockchain technology. Each digital trading card represents ownership of exclusive, high-quality 3D renders and detailed specifications of legendary automobiles.</p>
+        <p>Our cards are minted as NFTs on the Ethereum blockchain, ensuring authenticity, scarcity, and true digital ownership. Trade, collect, and display your automotive passion in the digital realm.</p>
+        <div class="web3-features">
+            <div class="feature">
+                <i class="fab fa-ethereum"></i>
+                <h3>Blockchain Backed</h3>
+                <p>All cards are ERC-721 tokens on Ethereum</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Provable Scarcity</h3>
+                <p>Limited editions with verifiable rarity</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Instant Trading</h3>
+                <p>Trade directly on OpenSea & Rarible</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <h2>Contact the Artist</h2>
-        <p>For purchase inquiries, commissions, or questions:</p>
-        <a href="mailto:example@racecards.com?subject=Art%20Inquiry" class="contact-btn">
-            <i class="fas fa-envelope"></i> Email Now
-        </a>
+        <h2>JOIN OUR COMMUNITY</h2>
+        <p>Connect with fellow car enthusiasts and collectors in the Web3 space.</p>
+        <div class="social-links">
+            <a href="#" class="social-btn discord">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+            <a href="#" class="social-btn twitter">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="#" class="social-btn telegram">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="mailto:contact@racecardsweb3.com" class="contact-btn">
+                <i class="fas fa-envelope"></i> Email Us
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Racecards Art Gallery &copy; 2024 | Built with GitHub Pages | Card-style Display</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>RACECARDS WEB3</h4>
+                <p>Digital Car Trading Cards on Blockchain</p>
+            </div>
+            <div class="footer-section">
+                <h4>Marketplaces</h4>
+                <a href="#">OpenSea</a>
+                <a href="#">Rarible</a>
+                <a href="#">Foundation</a>
+            </div>
+            <div class="footer-section">
+                <h4>Technology</h4>
+                <a href="#">Ethereum</a>
+                <a href="#">Polygon</a>
+                <a href="#">IPFS</a>
+            </div>
+        </div>
+        <p class="copyright">Racecards Web3 &copy; 2024 | Blockchain-Powered Car Collectibles</p>
     </footer>
 
     <!-- JavaScript -->
