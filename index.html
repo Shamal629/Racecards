@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Racecards Web3 | Digital Car Trading Cards</title>
-    <link rel="stylesheet" href="art.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -16,7 +16,6 @@
                 <i class="fas fa-flag-checkered"></i>
                 <span>Racecards</span>Web3
             </a>
-            
             <div class="nav-links">
                 <a href="#gallery" class="active">Gallery</a>
                 <a href="#about">About</a>
@@ -25,7 +24,6 @@
                     <i class="fas fa-wallet"></i> Connect Wallet
                 </a>
             </div>
-            
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -40,12 +38,10 @@
             </video>
             <div class="video-overlay"></div>
         </div>
-        
         <div class="hero-content">
             <h1 class="hero-title">DIGITAL CAR TRADING CARDS</h1>
             <p class="hero-subtitle">Collect, Trade, and Own Exclusive Digital Car Cards on the Blockchain</p>
             <a href="#gallery" class="hero-btn">Explore Gallery</a>
-            
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number">1,234</span>
@@ -82,7 +78,7 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="cards-grid" id="cardsContainer">
-                <!-- Cards will be dynamically loaded by JavaScript -->
+                <!-- Cards loaded by JavaScript -->
             </div>
         </div>
     </section>
@@ -95,7 +91,6 @@
                 <div class="about-text">
                     <p>Racecards Web3 is revolutionizing car collecting through blockchain technology. Each digital trading card represents ownership of exclusive, high-quality 3D renders and detailed specifications of legendary automobiles.</p>
                     <p>Our cards are minted as NFTs on the Ethereum blockchain, ensuring authenticity, scarcity, and true digital ownership. Trade, collect, and display your automotive passion in the digital realm.</p>
-                    
                     <div class="web3-features">
                         <div class="feature">
                             <i class="fab fa-ethereum"></i>
@@ -115,7 +110,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="about-image">
                 <div class="image-frame">
                     <div class="image-card">
@@ -142,7 +136,6 @@
         <div class="container">
             <h2 class="section-title">JOIN OUR COMMUNITY</h2>
             <p class="contact-subtitle">Connect with fellow car enthusiasts and collectors in the Web3 space.</p>
-            
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-item">
@@ -167,7 +160,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="social-links">
                     <a href="#" class="social-btn discord">
                         <i class="fab fa-discord"></i> Join Discord
@@ -197,14 +189,12 @@
                     </a>
                     <p>Blockchain-Powered Car Collectibles</p>
                 </div>
-                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <a href="#gallery">Gallery</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </div>
-                
                 <div class="footer-social">
                     <h3>Marketplaces</h3>
                     <div class="social-icons">
@@ -215,7 +205,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2024 Racecards Web3. All rights reserved. | Digital Car Trading Cards on Blockchain</p>
             </div>
@@ -226,7 +215,6 @@
     <div class="modal" id="cardModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
-            
             <div class="modal-body">
                 <div class="modal-image">
                     <div class="modal-image-inner" id="modalCarImage"></div>
@@ -234,26 +222,21 @@
                         <i class="fab fa-ethereum"></i> ERC-721 NFT
                     </div>
                 </div>
-                
                 <div class="modal-details">
                     <div class="modal-category" id="modalCategory"></div>
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <h3 class="modal-subtitle" id="modalSubtitle"></h3>
                     <div class="modal-year" id="modalYear"></div>
-                    
                     <div class="modal-description">
                         <p id="modalDescription"></p>
                     </div>
-                    
                     <div class="modal-price">
                         <span class="price-label">Price:</span>
                         <span class="price-value" id="modalPrice"></span>
                     </div>
-                    
                     <div class="modal-stats" id="modalStats">
-                        <!-- Stats will be added by JavaScript -->
+                        <!-- Stats added by JavaScript -->
                     </div>
-                    
                     <div class="modal-actions">
                         <button class="purchase-btn" id="purchaseBtn">
                             <i class="fas fa-shopping-cart"></i> Purchase NFT
@@ -262,7 +245,6 @@
                             <i class="fas fa-exchange-alt"></i> Make Offer
                         </button>
                     </div>
-                    
                     <div class="blockchain-info">
                         <h3><i class="fab fa-ethereum"></i> Blockchain Information</h3>
                         <p class="contract-address">
@@ -277,6 +259,6 @@
         </div>
     </div>
 
-    <script src="art.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
