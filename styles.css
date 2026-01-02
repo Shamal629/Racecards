@@ -431,11 +431,26 @@ body {
     color: white;
 }
 
-.card-category.racecard { background: var(--racecard); }
-.card-category.classiccard { background: var(--classiccard); }
-.card-category.specialcard { background: var(--specialcard); }
-.card-category.luxcard { background: var(--luxcard); color: #000; }
-.card-category.ecard { background: var(--ecard); }
+.card-category.racecard { 
+    background: var(--racecard); 
+}
+
+.card-category.classiccard { 
+    background: var(--classiccard); 
+}
+
+.card-category.specialcard { 
+    background: var(--specialcard); 
+}
+
+.card-category.luxcard { 
+    background: var(--luxcard); 
+    color: #000; 
+}
+
+.card-category.ecard { 
+    background: var(--ecard); 
+}
 
 .nft-badge {
     position: absolute;
@@ -1210,18 +1225,12 @@ body {
 
 /* Animations */
 @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-@keyframes carFloat {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-55%) translateX(10px); }
-}
-
-@keyframes lightsPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    0% { 
+        background-position: 200% 0; 
+    }
+    100% { 
+        background-position: -200% 0; 
+    }
 }
 
 /* Responsive Design */
@@ -1443,8 +1452,7 @@ body {
     
     .card-button,
     .purchase-btn,
-    .trade-btn,
-    .submit-btn {
+    .trade-btn {
         min-height: 50px;
         padding: 14px;
         font-size: 1rem;
@@ -1480,8 +1488,7 @@ body {
     .filter-btn:active,
     .card-button:active,
     .purchase-btn:active,
-    .trade-btn:active,
-    .submit-btn:active {
+    .trade-btn:active {
         transform: scale(0.98);
     }
 }
