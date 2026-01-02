@@ -112,7 +112,6 @@ const connectWalletBtn = document.getElementById('connectWallet');
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');
 const filterButtons = document.querySelectorAll('.filter-btn');
-const contactForm = document.getElementById('contactForm');
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
@@ -241,9 +240,6 @@ function setupEventListeners() {
             // Apply filter
             const filter = button.getAttribute('data-filter');
             renderCards(filter);
-            
-            // Add animation to cards
-            animateCards();
         });
     });
     
@@ -270,43 +266,11 @@ function setupEventListeners() {
     if (connectWalletBtn) {
         connectWalletBtn.addEventListener('click', connectWallet);
     }
-    
-    // Contact form submission
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactSubmit);
-    }
 }
 
-// Setup image loading with intersection observer
+// Setup image loading
 function setupImageLoading() {
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                }
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Animate cards on filter
-function animateCards() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        card.classList.add('animate');
-        
-        setTimeout(() => {
-            card.classList.remove('animate');
-        }, 1000);
-    });
+    // Images are loaded via onload attribute in the card creation
 }
 
 // Open card modal
@@ -432,24 +396,6 @@ function tradeCard(card) {
     }, 1500);
 }
 
-// Handle contact form submission
-function handleContactSubmit(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    // Simulate form submission
-    showNotification('Sending your message...', 'info');
-    
-    setTimeout(() => {
-        e.target.reset();
-        showNotification('Thank you for your message! We will get back to you soon.', 'success');
-    }, 2000);
-}
-
 // Show notification
 function showNotification(message, type = 'info') {
     // Remove existing notification
@@ -493,7 +439,7 @@ function showNotification(message, type = 'info') {
         display: flex;
         align-items: center;
         gap: 10px;
-        box-shadow: var(--shadow);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         z-index: 3000;
         animation: slideIn 0.3s ease;
         max-width: 400px;
@@ -560,34 +506,6 @@ function showNotification(message, type = 'info') {
     
     document.body.appendChild(notification);
 }
-
-// Add CSS for animations
-const styleSheet = document.createElement('style');
-styleSheet.textContent = `
-    .card {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.5s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .card.animate {
-        animation: cardPop 0.3s ease;
-    }
-    
-    @keyframes cardPop {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-`;
-document.head.appendChild(styleSheet);
 
 // Initialize with all cards
 renderCards();
