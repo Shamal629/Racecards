@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function() {
-            if (navMenu.classList.contains('active')) {
+            if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 if (navToggle) {
                     navToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
             
             // Simple validation
-            if (!name || !email || !message) {
+            if (!name.value || !email.value || !message.value) {
                 alert('Please fill in all fields');
                 return;
             }
@@ -143,14 +143,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Add CSS animation for fadeIn
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    `;
-    document.head.appendChild(style);
 });
