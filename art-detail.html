@@ -3,619 +3,517 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Details | Racecards Web3</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Lamborghini Huracán - Racecards</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Additional styles for the detail page */
-        .detail-hero {
-            height: 60vh;
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.7)),
-                        url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1600');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .detail-hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            color: #FF3B30;
-            text-shadow: 0 0 20px rgba(255, 59, 48, 0.3);
-            margin-bottom: 20px;
-        }
-        
-        .detail-hero p {
-            font-size: 1.2rem;
-            color: #F5F5F7;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .card-detail-container {
-            padding: 60px 20px;
-            background: #0A0A0A;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            margin-bottom: 40px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .back-btn:hover {
-            background: #FF3B30;
-            transform: translateX(-5px);
-        }
-        
-        .detail-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: rgba(28, 28, 30, 0.8);
-            border-radius: 25px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 59, 48, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-        
-        .detail-image {
-            position: relative;
-            overflow: hidden;
-            min-height: 500px;
-            background: linear-gradient(45deg, #1C1C1E, #0A0A0A);
-        }
-        
-        .detail-image-inner {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .nft-badge-detail {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #AF52DE, #FF3B30);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            z-index: 2;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .detail-info {
-            padding: 40px;
-        }
-        
-        .detail-category {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .detail-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            color: white;
-            margin-bottom: 10px;
-            line-height: 1.1;
-        }
-        
-        .detail-subtitle {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.4rem;
-            color: #FF9500;
-            margin-bottom: 20px;
-        }
-        
-        .detail-meta {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            color: #8E8E93;
-        }
-        
-        .detail-meta span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .detail-price {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            color: #FF9500;
-            margin: 30px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .detail-price i {
-            font-size: 2rem;
-        }
-        
-        .detail-description {
-            color: #8E8E93;
-            line-height: 1.6;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        .detail-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .detail-stat {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .detail-stat-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            color: #FF3B30;
-            display: block;
-            font-weight: 700;
-        }
-        
-        .detail-stat-label {
-            font-size: 0.9rem;
-            color: #8E8E93;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .detail-specs {
-            margin: 30px 0;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .spec-label {
-            color: #8E8E93;
-            font-weight: 500;
-        }
-        
-        .spec-value {
-            color: white;
-            font-weight: 500;
-        }
-        
-        .detail-actions {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .detail-btn {
-            flex: 1;
-            padding: 18px;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .detail-btn.purchase {
-            background: linear-gradient(90deg, #FF3B30, #FF9500);
-            color: white;
-        }
-        
-        .detail-btn.trade {
-            background: linear-gradient(90deg, #AF52DE, #FF3B30);
-            color: white;
-        }
-        
-        .detail-btn.inquiry {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .detail-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .blockchain-detail {
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            border-left: 4px solid #FF3B30;
-        }
-        
-        .blockchain-detail h3 {
-            font-family: 'Rajdhani', sans-serif;
-            color: #FF3B30;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contract-address {
-            font-family: 'Exo 2', monospace;
-            font-size: 0.9rem;
-            color: #8E8E93;
-            word-break: break-all;
-            line-height: 1.5;
-        }
-        
-        @media (max-width: 1024px) {
-            .detail-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-image {
-                min-height: 400px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .detail-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .detail-title {
-                font-size: 2rem;
-            }
-            
-            .detail-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .detail-actions {
-                flex-direction: column;
-            }
-            
-            .detail-btn {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .detail-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-content {
-                margin: 0 10px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-flag-checkered"></i>
-                <span>Racecards</span>Web3
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#gallery">Gallery</a>
-                <a href="index.html#contact">Contact</a>
-                <a href="#" class="wallet-btn" id="connectWalletDetail">
-                    <i class="fas fa-wallet"></i> Connect Wallet
-                </a>
-            </div>
-            <button class="menu-toggle" id="menuToggle">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Racecards</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#cards">Cards</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <div class="detail-hero">
+    <!-- Card Detail Section -->
+    <section class="card-detail-section">
         <div class="container">
-            <h1>DETAILED CARD VIEW</h1>
-            <p>Complete specifications and blockchain information for your collectible</p>
-        </div>
-    </div>
-
-    <section class="card-detail-container">
-        <div class="container">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i> Back to Gallery
+            <a href="index.html#cards" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Collection
             </a>
             
-            <div class="detail-content">
-                <div class="detail-image">
-                    <div class="detail-image-inner" id="detailCarImage" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200');"></div>
-                    <div class="nft-badge-detail">
-                        <i class="fab fa-ethereum"></i> ERC-721 NFT
+            <div class="card-detail-container">
+                <!-- Card Image -->
+                <div class="card-detail-image">
+                    <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Lamborghini Huracán">
+                    <div class="image-badge">
+                        <span class="flag">ITA 🇮🇹</span>
+                        <span class="category">Supercar</span>
                     </div>
                 </div>
                 
-                <div class="detail-info">
-                    <div class="detail-category" id="detailCategory" style="background: #FF3B30;">Racecard</div>
-                    <h1 class="detail-title" id="detailTitle">LA FERRARI</h1>
-                    <h3 class="detail-subtitle" id="detailSubtitle">Limited Edition Hypercar</h3>
-                    
-                    <div class="detail-meta">
-                        <span><i class="fas fa-calendar"></i> <span id="detailYear">2023</span></span>
-                        <span><i class="fas fa-gas-pump"></i> <span id="detailEngine">V12 Hybrid</span></span>
-                        <span><i class="fas fa-tachometer-alt"></i> <span id="detailPower">950 HP</span></span>
+                <!-- Card Details -->
+                <div class="card-detail-content">
+                    <h1 class="card-detail-title">Lamborghini Huracán</h1>
+                    <div class="card-detail-price">
+                        <span>Current Market Price:</span>
+                        <strong>95 ETH</strong>
                     </div>
                     
-                    <div class="detail-price">
-                        <i class="fab fa-ethereum"></i>
-                        <span id="detailPrice">1.8 ETH</span>
+                    <div class="card-detail-description">
+                        <p>The Huracán is one of the most iconic super performance cars developed by Lamborghini, designed as the successor to the legendary Gallardo.</p>
+                        <p>A true Italian beauty, it blends razor-sharp design with a naturally aspirated engine that delivers both raw emotion and precision driving.</p>
+                        <p>It rockets from 0 to 100 km/h in just 3.2 seconds, making it a serious weapon on both road and track.</p>
                     </div>
                     
-                    <div class="detail-description" id="detailDescription">
-                        The LaFerrari represents the pinnacle of Ferrari's engineering and design. This limited edition hypercar features a 6.3L V12 engine paired with a HY-KERS electric motor, delivering a combined 950 horsepower. Only 500 units were produced worldwide, making this digital card a rare collectible.
-                    </div>
-                    
-                    <div class="detail-stats">
-                        <div class="detail-stat">
-                            <span class="detail-stat-value" id="statHp">950</span>
-                            <span class="detail-stat-label">Horsepower</span>
+                    <!-- Specifications -->
+                    <div class="specs-grid">
+                        <div class="spec">
+                            <h3>Engine Type</h3>
+                            <p>Naturally Aspirated V10</p>
                         </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-value" id="statAcceleration">2.4s</span>
-                            <span class="detail-stat-label">0-60 mph</span>
+                        <div class="spec">
+                            <h3>Engine Capacity</h3>
+                            <p>5.2 L</p>
                         </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-value" id="statTopSpeed">217</span>
-                            <span class="detail-stat-label">Top Speed</span>
+                        <div class="spec">
+                            <h3>Power</h3>
+                            <p>610 HP</p>
                         </div>
-                    </div>
-                    
-                    <div class="detail-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Engine:</span>
-                            <span class="spec-value" id="specEngine">6.3L V12 + Electric Motor</span>
+                        <div class="spec">
+                            <h3>Handling</h3>
+                            <p>88 / 100</p>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Transmission:</span>
-                            <span class="spec-value" id="specTransmission">7-speed dual-clutch</span>
+                        <div class="spec">
+                            <h3>Weight</h3>
+                            <p>~1,422 kg</p>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Production:</span>
-                            <span class="spec-value" id="specProduction">500 units worldwide</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weight:</span>
-                            <span class="spec-value" id="specWeight">2,766 lbs (1,255 kg)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Ownership:</span>
-                            <span class="spec-value" id="specOwnership">Digital NFT + Physical Certificate</span>
+                        <div class="spec">
+                            <h3>Top Speed</h3>
+                            <p>325 km/h</p>
                         </div>
                     </div>
                     
-                    <div class="detail-actions">
-                        <button class="detail-btn purchase" onclick="purchaseCard()">
-                            <i class="fas fa-shopping-cart"></i> Purchase NFT
+                    <!-- Pros and Cons -->
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h3><i class="fas fa-check-circle"></i> Pros</h3>
+                            <ul>
+                                <li>High-revving NA V10 (rare in modern cars)</li>
+                                <li>Extremely sharp steering and cornering</li>
+                                <li>Aggressive, timeless Lamborghini design</li>
+                                <li>Daily-drivable compared to older Lambos</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h3><i class="fas fa-times-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Expensive maintenance and ownership</li>
+                                <li>Interior feels less luxurious than rivals</li>
+                                <li>Limited rear visibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Rivals -->
+                    <div class="rivals">
+                        <h3>Rivals</h3>
+                        <div class="rival-tags">
+                            <span>Ferrari 458 Italia</span>
+                            <span>Ferrari 488 GTB</span>
+                            <span>McLaren 650S</span>
+                            <span>McLaren 620R</span>
+                            <span>Audi R8 V10</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Fun Fact -->
+                    <div class="fun-fact">
+                        <h3><i class="fas fa-lightbulb"></i> Fun Fact</h3>
+                        <p>Huracán is named after a legendary Spanish fighting bull known for its unmatched aggression and bravery — and the car lives up to that name every time the V10 screams past 8,000 RPM.</p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="trade-btn">
+                            <i class="fas fa-exchange-alt"></i> Propose Trade
                         </button>
-                        <button class="detail-btn trade" onclick="tradeCard()">
-                            <i class="fas fa-exchange-alt"></i> Make Offer
+                        <button class="offer-btn">
+                            <i class="fas fa-tag"></i> Make Offer
                         </button>
-                        <button class="detail-btn inquiry" onclick="contactOwner()">
-                            <i class="fas fa-envelope"></i> Inquire
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i> Add to Wishlist
                         </button>
-                    </div>
-                    
-                    <div class="blockchain-detail">
-                        <h3><i class="fab fa-ethereum"></i> Blockchain Information</h3>
-                        <p class="contract-address" id="blockchainInfo">
-                            Contract: 0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7<br>
-                            Token ID: #001234<br>
-                            Network: Ethereum Mainnet<br>
-                            Standard: ERC-721
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="index.html" class="logo">
-                        <i class="fas fa-flag-checkered"></i>
-                        <span>Racecards</span>Web3
-                    </a>
-                    <p>Blockchain-Powered Car Collectibles</p>
+                    <h2>Racecards</h2>
+                    <p>Digital Automotive Trading Cards</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Racecards Web3. All rights reserved. | Digital Car Trading Cards on Blockchain</p>
+                <div class="footer-links">
+                    <a href="index.html#cards">Collection</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Racecards by Shamal. All rights reserved.</p>
+                    <p>This is a demonstration website for portfolio purposes.</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Get card ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const cardId = urlParams.get('id') || '1';
-        
-        // Card data
-        const cardData = {
-            '1': {
-                title: 'LA FERRARI',
-                category: 'racecard',
-                subtitle: 'Limited Edition Hypercar',
-                year: '2023',
-                engine: 'V12 Hybrid',
-                power: '950 HP',
-                price: '1.8 ETH',
-                description: 'The LaFerrari represents the pinnacle of Ferrari\'s engineering and design. This limited edition hypercar features a 6.3L V12 engine paired with a HY-KERS electric motor, delivering a combined 950 horsepower. Only 500 units were produced worldwide, making this digital card a rare collectible.',
-                engineDetail: '6.3L V12 + Electric Motor',
-                transmission: '7-speed dual-clutch',
-                production: '500 units worldwide',
-                weight: '2,766 lbs (1,255 kg)',
-                ownership: 'Digital NFT + Physical Certificate',
-                hp: '950',
-                acceleration: '2.4s',
-                topspeed: '217',
-                image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200'
-            },
-            '2': {
-                title: 'BUGATTI CHIRON',
-                category: 'luxcard',
-                subtitle: 'Ultimate Speed Machine',
-                year: '2024',
-                engine: 'W16 8.0L',
-                power: '1500 HP',
-                price: '3.2 ETH',
-                description: 'The Bugatti Chiron represents the ultimate expression of automotive engineering. With its quad-turbocharged 8.0L W16 engine producing 1,500 horsepower, it redefines the limits of speed and luxury.',
-                engineDetail: '8.0L Quad-Turbo W16',
-                transmission: '7-speed dual-clutch',
-                production: 'Limited to 500 units',
-                weight: '4,400 lbs (1,996 kg)',
-                ownership: 'Digital NFT + Physical Certificate',
-                hp: '1500',
-                acceleration: '2.3s',
-                topspeed: '261',
-                image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200'
-            },
-            '3': {
-                title: 'FERRARI 250 GTO',
-                category: 'classiccard',
-                subtitle: 'Most Valuable Car',
-                year: '1962',
-                engine: 'V12 3.0L',
-                power: '300 HP',
-                price: '8.5 ETH',
-                description: 'The Ferrari 250 GTO is the most valuable car in history. With only 36 units ever produced, it represents the golden era of sports car racing.',
-                engineDetail: '3.0L Colombo V12',
-                transmission: '5-speed manual',
-                production: '36 units worldwide',
-                weight: '2,200 lbs (998 kg)',
-                ownership: 'Digital NFT + Physical Certificate',
-                hp: '300',
-                acceleration: '6.1s',
-                topspeed: '152',
-                image: 'https://images.unsplash.com/photo-1502164980785-f8aa41d53611?auto=format&fit=crop&w=1200'
+        // Additional script for artdetail.html
+        document.addEventListener('DOMContentLoaded', function() {
+            // Action button interactions
+            const tradeBtn = document.querySelector('.trade-btn');
+            const offerBtn = document.querySelector('.offer-btn');
+            const wishlistBtn = document.querySelector('.wishlist-btn');
+            
+            if (tradeBtn) {
+                tradeBtn.addEventListener('click', function() {
+                    alert('Trade proposal feature would be implemented in a full application.');
+                });
             }
-        };
-        
-        // Update page with card data
-        function loadCardDetails() {
-            if (cardData[cardId]) {
-                const card = cardData[cardId];
-                
-                // Update text content
-                document.getElementById('detailTitle').textContent = card.title;
-                document.getElementById('detailCategory').textContent = card.category.charAt(0).toUpperCase() + card.category.slice(1);
-                document.getElementById('detailSubtitle').textContent = card.subtitle;
-                document.getElementById('detailYear').textContent = card.year;
-                document.getElementById('detailEngine').textContent = card.engine;
-                document.getElementById('detailPower').textContent = card.power;
-                document.getElementById('detailPrice').textContent = card.price;
-                document.getElementById('detailDescription').textContent = card.description;
-                document.getElementById('specEngine').textContent = card.engineDetail;
-                document.getElementById('specTransmission').textContent = card.transmission;
-                document.getElementById('specProduction').textContent = card.production;
-                document.getElementById('specWeight').textContent = card.weight;
-                document.getElementById('specOwnership').textContent = card.ownership;
-                document.getElementById('statHp').textContent = card.hp;
-                document.getElementById('statAcceleration').textContent = card.acceleration;
-                document.getElementById('statTopSpeed').textContent = card.topspeed;
-                
-                // Update image
-                document.getElementById('detailCarImage').style.backgroundImage = `url('${card.image}')`;
-                
-                // Update category color
-                const categoryElement = document.getElementById('detailCategory');
-                switch(card.category) {
-                    case 'racecard':
-                        categoryElement.style.background = '#FF3B30';
-                        break;
-                    case 'classiccard':
-                        categoryElement.style.background = '#AF52DE';
-                        break;
-                    case 'luxcard':
-                        categoryElement.style.background = '#FFCC00';
-                        categoryElement.style.color = '#000';
-                        break;
-                    case 'specialcard':
-                        categoryElement.style.background = '#FF9500';
-                        break;
-                    case 'ecard':
-                        categoryElement.style.background = '#32D74B';
-                        break;
+            
+            if (offerBtn) {
+                offerBtn.addEventListener('click', function() {
+                    const offer = prompt('Enter your offer in ETH:');
+                    if (offer) {
+                        alert(`Offer of ${offer} ETH submitted!`);
+                    }
+                });
+            }
+            
+            if (wishlistBtn) {
+                wishlistBtn.addEventListener('click', function() {
+                    const icon = wishlistBtn.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        wishlistBtn.style.background = 'linear-gradient(to right, #e91e63, #c2185b)';
+                        alert('Added to wishlist!');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        wishlistBtn.style.background = 'linear-gradient(to right, var(--royal-violet), var(--fire-orange))';
+                        alert('Removed from wishlist!');
+                    }
+                });
+            }
+            
+            // Add styles for artdetail page
+            const style = document.createElement('style');
+            style.textContent = `
+                .card-detail-section {
+                    padding: 120px 0 80px;
+                    background-color: var(--space-black);
                 }
-            }
-        }
-        
-        // Wallet connection
-        document.getElementById('connectWalletDetail').addEventListener('click', function() {
-            alert('Wallet connection functionality coming soon!\nThis would connect to MetaMask or other Web3 wallets.');
+                
+                .back-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: var(--light-gray);
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    margin-bottom: 40px;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    background-color: rgba(106, 17, 203, 0.1);
+                    transition: all 0.3s ease;
+                }
+                
+                .back-btn:hover {
+                    background-color: rgba(106, 17, 203, 0.3);
+                    transform: translateX(-5px);
+                }
+                
+                .card-detail-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1.2fr;
+                    gap: 60px;
+                    background: linear-gradient(145deg, var(--dark-gray), var(--medium-gray));
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+                }
+                
+                .card-detail-image {
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .card-detail-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .image-badge {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    display: flex;
+                    gap: 10px;
+                }
+                
+                .image-badge span {
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                }
+                
+                .image-badge .flag {
+                    background-color: rgba(10, 10, 18, 0.8);
+                    color: var(--white);
+                }
+                
+                .image-badge .category {
+                    background: linear-gradient(to right, var(--royal-violet), var(--dark-violet));
+                    color: var(--white);
+                }
+                
+                .card-detail-content {
+                    padding: 40px;
+                }
+                
+                .card-detail-title {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                    color: var(--white);
+                }
+                
+                .card-detail-price {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: linear-gradient(to right, rgba(255, 107, 53, 0.2), rgba(106, 17, 203, 0.2));
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-bottom: 30px;
+                    border: 1px solid rgba(255, 107, 53, 0.3);
+                }
+                
+                .card-detail-price span {
+                    font-size: 1.2rem;
+                    color: var(--light-gray);
+                }
+                
+                .card-detail-price strong {
+                    font-size: 2.5rem;
+                    color: var(--fire-orange);
+                    font-family: 'Orbitron', sans-serif;
+                }
+                
+                .card-detail-description {
+                    margin-bottom: 40px;
+                }
+                
+                .card-detail-description p {
+                    margin-bottom: 15px;
+                    font-size: 1.1rem;
+                    line-height: 1.7;
+                }
+                
+                .specs-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                    margin-bottom: 40px;
+                }
+                
+                .spec {
+                    background-color: rgba(10, 10, 18, 0.5);
+                    padding: 20px;
+                    border-radius: 10px;
+                    border-left: 4px solid var(--fire-orange);
+                }
+                
+                .spec h3 {
+                    font-size: 1rem;
+                    color: var(--light-gray);
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                
+                .spec p {
+                    font-size: 1.4rem;
+                    color: var(--white);
+                    font-weight: bold;
+                    font-family: 'Rajdhani', sans-serif;
+                }
+                
+                .pros-cons {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin-bottom: 40px;
+                }
+                
+                .pros, .cons {
+                    padding: 25px;
+                    border-radius: 10px;
+                }
+                
+                .pros {
+                    background-color: rgba(76, 175, 80, 0.1);
+                    border: 1px solid rgba(76, 175, 80, 0.3);
+                }
+                
+                .cons {
+                    background-color: rgba(244, 67, 54, 0.1);
+                    border: 1px solid rgba(244, 67, 54, 0.3);
+                }
+                
+                .pros h3, .cons h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    font-size: 1.4rem;
+                }
+                
+                .pros h3 {
+                    color: #4CAF50;
+                }
+                
+                .cons h3 {
+                    color: #f44336;
+                }
+                
+                .pros ul, .cons ul {
+                    padding-left: 20px;
+                }
+                
+                .pros li, .cons li {
+                    margin-bottom: 10px;
+                    font-size: 1.05rem;
+                }
+                
+                .rivals {
+                    margin-bottom: 40px;
+                }
+                
+                .rivals h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                    color: var(--white);
+                }
+                
+                .rival-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+                
+                .rival-tags span {
+                    background-color: rgba(106, 17, 203, 0.2);
+                    color: var(--light-gray);
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(106, 17, 203, 0.5);
+                }
+                
+                .fun-fact {
+                    background-color: rgba(255, 193, 7, 0.1);
+                    padding: 25px;
+                    border-radius: 10px;
+                    margin-bottom: 40px;
+                    border: 1px solid rgba(255, 193, 7, 0.3);
+                }
+                
+                .fun-fact h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #FFC107;
+                    font-size: 1.4rem;
+                    margin-bottom: 15px;
+                }
+                
+                .fun-fact p {
+                    font-size: 1.1rem;
+                    line-height: 1.7;
+                }
+                
+                .action-buttons {
+                    display: flex;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                }
+                
+                .action-buttons button {
+                    flex: 1;
+                    min-width: 150px;
+                    padding: 18px;
+                    border-radius: 10px;
+                    border: none;
+                    font-size: 1.1rem;
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+                
+                .trade-btn {
+                    background: linear-gradient(to right, var(--royal-violet), var(--dark-violet));
+                    color: var(--white);
+                }
+                
+                .offer-btn {
+                    background: linear-gradient(to right, var(--fire-orange), var(--light-orange));
+                    color: var(--white);
+                }
+                
+                .wishlist-btn {
+                    background: linear-gradient(to right, var(--royal-violet), var(--fire-orange));
+                    color: var(--white);
+                }
+                
+                .action-buttons button:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                }
+                
+                @media (max-width: 992px) {
+                    .card-detail-container {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .specs-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .card-detail-title {
+                        font-size: 2.2rem;
+                    }
+                    
+                    .pros-cons {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .specs-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .action-buttons button {
+                        min-width: 100%;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
         });
-        
-        function purchaseCard() {
-            const cardTitle = document.getElementById('detailTitle').textContent;
-            alert(`Purchase NFT: ${cardTitle}\n\nThis would open a transaction in your connected wallet.`);
-        }
-        
-        function tradeCard() {
-            const cardTitle = document.getElementById('detailTitle').textContent;
-            alert(`Make Offer: ${cardTitle}\n\nThis would allow you to make an offer for this NFT.`);
-        }
-        
-        function contactOwner() {
-            const cardTitle = document.getElementById('detailTitle').textContent;
-            const subject = `Inquiry about NFT: ${cardTitle}`;
-            const body = `Hello,\n\nI am interested in the ${cardTitle} NFT.\n\nPlease send me more information.`;
-            window.location.href = `mailto:contact@racecardsweb3.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
-        
-        // Load card details when page loads
-        document.addEventListener('DOMContentLoaded', loadCardDetails);
     </script>
 </body>
 </html>
