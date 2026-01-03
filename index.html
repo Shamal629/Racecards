@@ -2,135 +2,294 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Racecards Web3 | Digital Car Trading Cards</title>
-    <link rel="stylesheet" href="art.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racecards - Car Trading Cards Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <i class="fas fa-flag-checkered"></i>
-                <span>Racecards</span>Web3
-            </a>
-            
-            <div class="nav-links">
-                <a href="#gallery" class="active">Gallery</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#" class="wallet-btn" id="connectWallet">
-                    <i class="fas fa-wallet"></i> Connect Wallet
-                </a>
-            </div>
-            
-            <button class="menu-toggle" id="menuToggle">
+        <div class="nav-container">
+            <h1 class="logo">Racecards</h1>
+            <ul class="nav-menu">
+                <li><a href="#cards">Cards</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-video">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-racing-sports-car-on-a-track-2092-large.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        
+    <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">DIGITAL CAR TRADING CARDS</h1>
-            <p class="hero-subtitle">Collect, Trade, and Own Exclusive Digital Car Cards on the Blockchain</p>
-            <a href="#gallery" class="hero-btn">Explore Gallery</a>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">1,234</span>
-                    <span class="stat-label">Cards Minted</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">892</span>
-                    <span class="stat-label">Active Traders</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">456</span>
-                    <span class="stat-label">ETH Volume</span>
-                </div>
-            </div>
+            <h2 class="hero-title">Racecards <span>by Shamal</span></h2>
+            <p class="hero-subtitle">Collect, Trade, and Showcase the World's Most Exotic Automotive Icons</p>
+            <a href="#cards" class="hero-btn">Explore Cards</a>
         </div>
-    </header>
+        <div class="hero-background"></div>
+    </section>
 
     <!-- Filter Section -->
-    <section class="filters">
+    <section class="filter-section" id="cards">
         <div class="container">
-            <h2 class="section-title">Card Categories</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Cards</button>
-                <button class="filter-btn" data-filter="racecard">Racecard</button>
-                <button class="filter-btn" data-filter="classiccard">Classiccard</button>
-                <button class="filter-btn" data-filter="specialcard">Specialcard</button>
-                <button class="filter-btn" data-filter="luxcard">Luxcard</button>
-                <button class="filter-btn" data-filter="ecard">Ecards</button>
+            <h2 class="section-title">Trading Cards Collection</h2>
+            <div class="filter-tags">
+                <button class="filter-btn active" data-filter="all">All Cars</button>
+                <button class="filter-btn" data-filter="sportscar">Sportscars</button>
+                <button class="filter-btn" data-filter="supercar">Supercars</button>
+                <button class="filter-btn" data-filter="hypercar">Hypercars</button>
+                <button class="filter-btn" data-filter="special">Special Cars</button>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- Cards Gallery -->
+    <section class="cards-gallery">
         <div class="container">
-            <div class="cards-grid" id="cardsContainer">
-                <!-- Cards will be dynamically loaded by JavaScript -->
+            <div class="cards-container">
+                <!-- Card 1 - Lamborghini Huracán -->
+                <div class="trading-card" data-category="supercar">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lamborghini Huracán">
+                                <div class="card-flag">ITA 🇮🇹</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Lamborghini Huracán</h3>
+                                <div class="card-badge">Supercar</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">325 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">3.2 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">88 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>95 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=huracan" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 - Bugatti Veyron -->
+                <div class="trading-card" data-category="hypercar">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Bugatti Veyron">
+                                <div class="card-flag">FRA 🇫🇷</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Bugatti Veyron</h3>
+                                <div class="card-badge">Hypercar</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">407 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">2.5 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">85 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>250 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=veyron" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 - Ferrari LaFerrari -->
+                <div class="trading-card" data-category="hypercar">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ferrari LaFerrari">
+                                <div class="card-flag">ITA 🇮🇹</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Ferrari LaFerrari</h3>
+                                <div class="card-badge">Hypercar</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">350 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">2.7 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">95 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>300 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=laferrari" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 - Dodge Challenger Demon 170 -->
+                <div class="trading-card" data-category="special">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dodge Challenger Demon 170">
+                                <div class="card-flag">USA 🇺🇸</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Dodge Challenger Demon 170</h3>
+                                <div class="card-badge">Special Car</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">270 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">1.7 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">75 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>120 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=demon" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 - Lotus Emira -->
+                <div class="trading-card" data-category="sportscar">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lotus Emira">
+                                <div class="card-flag">GBR 🇬🇧</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Lotus Emira</h3>
+                                <div class="card-badge">Sportscar</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">290 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">4.3 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">92 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>65 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=emira" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 - Audi R8 -->
+                <div class="trading-card" data-category="supercar">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Audi R8">
+                                <div class="card-flag">GER 🇩🇪</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Audi R8</h3>
+                                <div class="card-badge">Supercar</div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Top Speed</span>
+                                        <span class="stat-value">330 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Acc (0–100)</span>
+                                        <span class="stat-value">3.1 secs</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Handling</span>
+                                        <span class="stat-value">90 / 100</span>
+                                    </div>
+                                </div>
+                                <div class="card-price">
+                                    <span>Price:</span>
+                                    <strong>85 ETH</strong>
+                                </div>
+                                <a href="artdetail.html?car=r8" class="view-card-btn">View Card</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about-section" id="about">
         <div class="container">
+            <h2 class="section-title">About Racecards</h2>
             <div class="about-content">
-                <h2 class="section-title">About Racecards Web3</h2>
                 <div class="about-text">
-                    <p>Racecards Web3 is revolutionizing car collecting through blockchain technology. Each digital trading card represents ownership of exclusive, high-quality 3D renders and detailed specifications of legendary automobiles.</p>
-                    <p>Our cards are minted as NFTs on the Ethereum blockchain, ensuring authenticity, scarcity, and true digital ownership. Trade, collect, and display your automotive passion in the digital realm.</p>
-                    
-                    <div class="web3-features">
-                        <div class="feature">
-                            <i class="fab fa-ethereum"></i>
-                            <h3>Blockchain Backed</h3>
-                            <p>All cards are ERC-721 tokens on Ethereum</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Provable Scarcity</h3>
-                            <p>Limited editions with verifiable rarity</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-exchange-alt"></i>
-                            <h3>Instant Trading</h3>
-                            <p>Trade directly on OpenSea & Rarible</p>
-                        </div>
-                    </div>
+                    <p>Welcome to <strong>Racecards</strong>, the premier digital destination for automotive enthusiasts and collectors. Our platform offers meticulously crafted digital trading cards featuring the world's most extraordinary performance vehicles.</p>
+                    <p>Each Racecard is a unique digital collectible, verified on the blockchain, capturing the essence of automotive engineering excellence. From timeless classics to cutting-edge hypercars, our collection celebrates the pinnacle of automotive design and performance.</p>
+                    <p>Collect, trade, and showcase your favorite automotive icons in a futuristic gallery designed for true enthusiasts. Join our community and start building your ultimate collection today.</p>
                 </div>
-            </div>
-            
-            <div class="about-image">
-                <div class="image-frame">
-                    <div class="image-card">
-                        <div class="image-card-inner">
-                            <div class="image-card-front">
-                                <i class="fas fa-car"></i>
-                                <h3>Premium Cards</h3>
-                                <p>Collectible Art</p>
-                            </div>
-                            <div class="image-card-back">
-                                <i class="fab fa-ethereum"></i>
-                                <h3>Blockchain NFT</h3>
-                                <p>ERC-721 Tokens on Ethereum</p>
-                            </div>
-                        </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>150+</h3>
+                        <p>Unique Cards</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>25+</h3>
+                        <p>Manufacturers</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>10,000+</h3>
+                        <p>Trades Completed</p>
                     </div>
                 </div>
             </div>
@@ -138,50 +297,46 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title">JOIN OUR COMMUNITY</h2>
-            <p class="contact-subtitle">Connect with fellow car enthusiasts and collectors in the Web3 space.</p>
-            
+            <h2 class="section-title">Contact Us</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email Now</h3>
-                            <p>contact@racecardsweb3.com</p>
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about our collection or interested in trading? Reach out to our team of automotive enthusiasts.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@racecards.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Virtual Gallery, Metaverse</span>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fab fa-discord"></i>
-                        <div>
-                            <h3>Discord</h3>
-                            <p>Join our community</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-twitter"></i>
-                        <div>
-                            <h3>Twitter</h3>
-                            <p>@racecardsweb3</p>
-                        </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                
-                <div class="social-links">
-                    <a href="#" class="social-btn discord">
-                        <i class="fab fa-discord"></i> Join Discord
-                    </a>
-                    <a href="#" class="social-btn twitter">
-                        <i class="fab fa-twitter"></i> Follow on Twitter
-                    </a>
-                    <a href="#" class="social-btn telegram">
-                        <i class="fab fa-telegram"></i> Telegram Group
-                    </a>
-                    <a href="mailto:contact@racecardsweb3.com" class="contact-btn">
-                        <i class="fas fa-envelope"></i> Email Us
-                    </a>
-                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
@@ -191,598 +346,23 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#" class="logo">
-                        <i class="fas fa-flag-checkered"></i>
-                        <span>Racecards</span>Web3
-                    </a>
-                    <p>Blockchain-Powered Car Collectibles</p>
+                    <h2>Racecards</h2>
+                    <p>Digital Automotive Trading Cards</p>
                 </div>
-                
                 <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <a href="#gallery">Gallery</a>
+                    <a href="#cards">Collection</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
+                    <a href="#">FAQ</a>
                 </div>
-                
-                <div class="footer-social">
-                    <h3>Marketplaces</h3>
-                    <div class="social-icons">
-                        <a href="#" title="OpenSea"><i class="fas fa-ship"></i></a>
-                        <a href="#" title="Rarible"><i class="fas fa-gem"></i></a>
-                        <a href="#" title="Foundation"><i class="fas fa-landmark"></i></a>
-                        <a href="#" title="LooksRare"><i class="fas fa-eye"></i></a>
-                    </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Racecards by Shamal. All rights reserved.</p>
+                    <p>This is a demonstration website for portfolio purposes.</p>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Racecards Web3. All rights reserved. | Digital Car Trading Cards on Blockchain</p>
             </div>
         </div>
     </footer>
 
-    <!-- Card Modal -->
-    <div class="modal" id="cardModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
-            
-            <div class="modal-body">
-                <div class="modal-image">
-                    <div class="modal-image-inner" id="modalCarImage"></div>
-                    <div class="nft-badge">
-                        <i class="fab fa-ethereum"></i> ERC-721 NFT
-                    </div>
-                </div>
-                
-                <div class="modal-details">
-                    <div class="modal-category" id="modalCategory"></div>
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <h3 class="modal-subtitle" id="modalSubtitle"></h3>
-                    <div class="modal-year" id="modalYear"></div>
-                    
-                    <div class="modal-description">
-                        <p id="modalDescription"></p>
-                    </div>
-                    
-                    <div class="modal-price">
-                        <span class="price-label">Price:</span>
-                        <span class="price-value" id="modalPrice"></span>
-                    </div>
-                    
-                    <div class="modal-stats" id="modalStats">
-                        <!-- Stats will be added by JavaScript -->
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button class="purchase-btn" id="purchaseBtn">
-                            <i class="fas fa-shopping-cart"></i> Purchase NFT
-                        </button>
-                        <button class="trade-btn" id="tradeBtn">
-                            <i class="fas fa-exchange-alt"></i> Make Offer
-                        </button>
-                    </div>
-                    
-                    <div class="blockchain-info">
-                        <h3><i class="fab fa-ethereum"></i> Blockchain Information</h3>
-                        <p class="contract-address">
-                            Contract: 0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7<br>
-                            Token ID: #001234<br>
-                            Network: Ethereum Mainnet<br>
-                            Standard: ERC-721
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Card Data
-        const cardData = [
-            {
-                id: 1,
-                title: "LA FERRARI",
-                category: "racecard",
-                subtitle: "Limited Edition Hypercar",
-                year: "2023",
-                engine: "V12 Hybrid",
-                power: "950 HP",
-                price: "1.8 ETH",
-                description: "The LaFerrari represents the pinnacle of Ferrari's engineering and design. This limited edition hypercar features a 6.3L V12 engine paired with a HY-KERS electric motor, delivering a combined 950 horsepower.",
-                image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "950" },
-                    { label: "0-60", value: "2.4s" },
-                    { label: "MPH", value: "217" }
-                ]
-            },
-            {
-                id: 2,
-                title: "BUGATTI CHIRON",
-                category: "luxcard",
-                subtitle: "Ultimate Speed Machine",
-                year: "2024",
-                engine: "W16 8.0L",
-                power: "1500 HP",
-                price: "3.2 ETH",
-                description: "The Bugatti Chiron represents the ultimate expression of automotive engineering. With its quad-turbocharged 8.0L W16 engine producing 1,500 horsepower.",
-                image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "1500" },
-                    { label: "0-60", value: "2.3s" },
-                    { label: "MPH", value: "261" }
-                ]
-            },
-            {
-                id: 3,
-                title: "FERRARI 250 GTO",
-                category: "classiccard",
-                subtitle: "Most Valuable Car",
-                year: "1962",
-                engine: "V12 3.0L",
-                power: "300 HP",
-                price: "8.5 ETH",
-                description: "The Ferrari 250 GTO is the most valuable car in history. With only 36 units ever produced, it represents the golden era of sports car racing.",
-                image: "https://images.unsplash.com/photo-1502164980785-f8aa41d53611?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "300" },
-                    { label: "0-60", value: "6.1s" },
-                    { label: "MPH", value: "152" }
-                ]
-            },
-            {
-                id: 4,
-                title: "MCLAREN F1 GTR",
-                category: "racecard",
-                subtitle: "Le Mans Winner",
-                year: "1995",
-                engine: "V12 6.1L",
-                power: "600 HP",
-                price: "4.7 ETH",
-                description: "Le Mans 24h winner. Road car transformed into racing legend with carbon fiber construction.",
-                image: "https://images.unsplash.com/photo-1617654116851-8daa20b8f349?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "600" },
-                    { label: "0-60", value: "3.2s" },
-                    { label: "MPH", value: "215" }
-                ]
-            },
-            {
-                id: 5,
-                title: "NISSAN GT-R R34",
-                category: "specialcard",
-                subtitle: "The Legendary Godzilla",
-                year: "1999",
-                engine: "RB26DETT",
-                power: "276 HP",
-                price: "2.1 ETH",
-                description: "The legendary Godzilla. Japanese domestic market icon with advanced ATTESA E-TS all-wheel drive.",
-                image: "https://images.unsplash.com/photo-1563720223484-21c6c2d3c340?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "276" },
-                    { label: "0-60", value: "4.9s" },
-                    { label: "MPH", value: "155" }
-                ]
-            },
-            {
-                id: 6,
-                title: "RIMAC NEVERA",
-                category: "ecard",
-                subtitle: "Electric Hypercar",
-                year: "2023",
-                engine: "Electric",
-                power: "1914 HP",
-                price: "3.8 ETH",
-                description: "All-electric hypercar with 1,914HP. World's fastest accelerating production car with four independent motors.",
-                image: "https://images.unsplash.com/photo-1624702046625-6247c5f4d56a?auto=format&fit=crop&w=600",
-                stats: [
-                    { label: "HP", value: "1914" },
-                    { label: "0-60", value: "1.85s" },
-                    { label: "MPH", value: "258" }
-                ]
-            }
-        ];
-
-        // DOM Elements
-        const cardsContainer = document.getElementById('cardsContainer');
-        const cardModal = document.getElementById('cardModal');
-        const modalClose = document.getElementById('modalClose');
-        const connectWalletBtn = document.getElementById('connectWallet');
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.querySelector('.nav-links');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCards();
-            setupEventListeners();
-            
-            // Add smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (window.innerWidth <= 768) {
-                            navLinks.classList.remove('active');
-                        }
-                    }
-                });
-            });
-        });
-
-        // Render cards to the gallery
-        function renderCards(filter = 'all') {
-            cardsContainer.innerHTML = '';
-            
-            const filteredCards = filter === 'all' 
-                ? cardData 
-                : cardData.filter(card => card.category === filter);
-            
-            filteredCards.forEach(card => {
-                const cardElement = createCardElement(card);
-                cardsContainer.appendChild(cardElement);
-            });
-        }
-
-        // Create card HTML element
-        function createCardElement(card) {
-            const cardDiv = document.createElement('div');
-            cardDiv.className = 'card';
-            cardDiv.setAttribute('data-category', card.category);
-            cardDiv.setAttribute('data-id', card.id);
-            
-            // Category color mapping
-            const categoryColors = {
-                'racecard': 'var(--racecard)',
-                'classiccard': 'var(--classiccard)',
-                'specialcard': 'var(--specialcard)',
-                'luxcard': 'var(--luxcard)',
-                'ecard': 'var(--ecard)'
-            };
-            
-            const categoryColor = categoryColors[card.category] || 'var(--primary)';
-            
-            cardDiv.innerHTML = `
-                <div class="card-image">
-                    <img src="${card.image}" alt="${card.title}" loading="lazy" 
-                         onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')">
-                    <div class="card-category ${card.category}" style="background: ${categoryColor}">
-                        ${card.category.charAt(0).toUpperCase() + card.category.slice(1)}
-                    </div>
-                    <div class="nft-badge">
-                        <i class="fab fa-ethereum"></i> NFT
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <h3 class="card-title">${card.title}</h3>
-                        <div class="card-price">
-                            <i class="fab fa-ethereum"></i> ${card.price}
-                        </div>
-                    </div>
-                    <h4 class="card-subtitle">${card.subtitle}</h4>
-                    <div class="card-year">${card.year} • ${card.engine}</div>
-                    <p class="card-description">${card.description}</p>
-                    
-                    <div class="card-stats">
-                        ${card.stats.map(stat => `
-                            <div class="stat-item">
-                                <span class="stat-value">${stat.value}</span>
-                                <span class="stat-label">${stat.label}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                    
-                    <button class="card-button" onclick="openCardModal(${card.id})">
-                        <i class="fas fa-eye"></i> View Card
-                    </button>
-                </div>
-            `;
-            
-            return cardDiv;
-        }
-
-        // Setup event listeners
-        function setupEventListeners() {
-            // Mobile menu toggle
-            if (menuToggle) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                }
-            });
-            
-            // Filter buttons
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Apply filter
-                    const filter = button.getAttribute('data-filter');
-                    renderCards(filter);
-                });
-            });
-            
-            // Modal close button
-            if (modalClose) {
-                modalClose.addEventListener('click', closeCardModal);
-            }
-            
-            // Close modal when clicking outside
-            cardModal.addEventListener('click', (e) => {
-                if (e.target === cardModal) {
-                    closeCardModal();
-                }
-            });
-            
-            // Escape key to close modal
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && cardModal.style.display === 'flex') {
-                    closeCardModal();
-                }
-            });
-            
-            // Wallet connection
-            if (connectWalletBtn) {
-                connectWalletBtn.addEventListener('click', connectWallet);
-            }
-        }
-
-        // Open card modal
-        function openCardModal(cardId) {
-            const card = cardData.find(c => c.id === cardId);
-            if (!card) return;
-            
-            // Update modal content
-            document.getElementById('modalTitle').textContent = card.title;
-            document.getElementById('modalSubtitle').textContent = card.subtitle;
-            document.getElementById('modalYear').textContent = `${card.year} • ${card.engine}`;
-            document.getElementById('modalDescription').textContent = card.description;
-            document.getElementById('modalPrice').innerHTML = `<i class="fab fa-ethereum"></i> ${card.price}`;
-            
-            // Update category
-            const modalCategory = document.getElementById('modalCategory');
-            modalCategory.textContent = card.category.charAt(0).toUpperCase() + card.category.slice(1);
-            
-            // Category color mapping
-            const categoryColors = {
-                'racecard': 'var(--racecard)',
-                'classiccard': 'var(--classiccard)',
-                'specialcard': 'var(--specialcard)',
-                'luxcard': 'var(--luxcard)',
-                'ecard': 'var(--ecard)'
-            };
-            
-            const categoryColor = categoryColors[card.category] || 'var(--primary)';
-            modalCategory.style.background = categoryColor;
-            
-            if (card.category === 'luxcard') {
-                modalCategory.style.color = '#000';
-            } else {
-                modalCategory.style.color = '#fff';
-            }
-            
-            // Update image
-            const modalImage = document.getElementById('modalCarImage');
-            modalImage.style.backgroundImage = `url('${card.image}')`;
-            
-            // Update stats
-            const modalStats = document.getElementById('modalStats');
-            modalStats.innerHTML = card.stats.map(stat => `
-                <div class="stat">
-                    <span class="stat-label">${stat.label}</span>
-                    <span class="stat-value">${stat.value}</span>
-                </div>
-            `).join('');
-            
-            // Set up purchase button
-            const purchaseBtn = document.getElementById('purchaseBtn');
-            if (purchaseBtn) {
-                purchaseBtn.onclick = () => purchaseCard(card);
-            }
-            
-            // Set up trade button
-            const tradeBtn = document.getElementById('tradeBtn');
-            if (tradeBtn) {
-                tradeBtn.onclick = () => tradeCard(card);
-            }
-            
-            // Show modal
-            cardModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close card modal
-        function closeCardModal() {
-            cardModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Connect wallet function
-        function connectWallet() {
-            // Simulate wallet connection
-            connectWalletBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
-            connectWalletBtn.disabled = true;
-            
-            setTimeout(() => {
-                const connected = Math.random() > 0.5; // Simulate 50% success rate
-                
-                if (connected) {
-                    connectWalletBtn.innerHTML = '<i class="fas fa-wallet"></i> Connected';
-                    connectWalletBtn.style.background = 'linear-gradient(90deg, var(--success), #2ecc71)';
-                    connectWalletBtn.onclick = null;
-                    
-                    // Show success notification
-                    showNotification('Wallet connected successfully!', 'success');
-                } else {
-                    connectWalletBtn.innerHTML = '<i class="fas fa-wallet"></i> Connect Wallet';
-                    connectWalletBtn.disabled = false;
-                    
-                    // Show error notification
-                    showNotification('Failed to connect wallet. Please try again.', 'error');
-                }
-            }, 1500);
-        }
-
-        // Purchase card function
-        function purchaseCard(card) {
-            showNotification(`Initiating purchase of ${card.title} for ${card.price}...`, 'info');
-            
-            // Simulate transaction
-            setTimeout(() => {
-                const success = Math.random() > 0.3; // 70% success rate
-                
-                if (success) {
-                    showNotification(`Successfully purchased ${card.title}! Transaction confirmed.`, 'success');
-                    closeCardModal();
-                } else {
-                    showNotification('Transaction failed. Please try again.', 'error');
-                }
-            }, 2000);
-        }
-
-        // Trade card function
-        function tradeCard(card) {
-            showNotification(`Making offer for ${card.title}...`, 'info');
-            
-            // Simulate trade offer
-            setTimeout(() => {
-                showNotification(`Offer submitted for ${card.title}. The owner will be notified.`, 'success');
-            }, 1500);
-        }
-
-        // Show notification
-        function showNotification(message, type = 'info') {
-            // Remove existing notification
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            
-            // Type-based icon and color
-            const icons = {
-                'success': 'fa-check-circle',
-                'error': 'fa-exclamation-circle',
-                'info': 'fa-info-circle'
-            };
-            
-            const colors = {
-                'success': 'linear-gradient(90deg, var(--success), #2ecc71)',
-                'error': 'linear-gradient(90deg, var(--primary), #e74c3c)',
-                'info': 'linear-gradient(90deg, var(--secondary), #3498db)'
-            };
-            
-            notification.innerHTML = `
-                <i class="fas ${icons[type] || 'fa-info-circle'}"></i>
-                <span>${message}</span>
-                <button class="close-notification">&times;</button>
-            `;
-            
-            // Add styles
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${colors[type] || colors.info};
-                color: white;
-                padding: 15px 20px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                z-index: 3000;
-                animation: slideIn 0.3s ease;
-                max-width: 400px;
-                font-family: var(--font-subheading);
-                font-weight: 500;
-            `;
-            
-            // Add keyframes animation
-            if (!document.getElementById('notification-styles')) {
-                const style = document.createElement('style');
-                style.id = 'notification-styles';
-                style.textContent = `
-                    @keyframes slideIn {
-                        from {
-                            transform: translateX(100%);
-                            opacity: 0;
-                        }
-                        to {
-                            transform: translateX(0);
-                            opacity: 1;
-                        }
-                    }
-                    @keyframes slideOut {
-                        from {
-                            transform: translateX(0);
-                            opacity: 1;
-                        }
-                        to {
-                            transform: translateX(100%);
-                            opacity: 0;
-                        }
-                    }
-                    .close-notification {
-                        background: none;
-                        border: none;
-                        color: white;
-                        font-size: 1.5rem;
-                        cursor: pointer;
-                        margin-left: 10px;
-                        padding: 0;
-                        width: 24px;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-            
-            // Add close functionality
-            notification.querySelector('.close-notification').addEventListener('click', function() {
-                notification.style.animation = 'slideOut 0.3s ease forwards';
-                setTimeout(() => notification.remove(), 300);
-            });
-            
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.animation = 'slideOut 0.3s ease forwards';
-                    setTimeout(() => notification.remove(), 300);
-                }
-            }, 5000);
-            
-            document.body.appendChild(notification);
-        }
-
-        // Initialize with all cards
-        renderCards();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
