@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const shadowX = -rotateY / 2;
             const shadowY = rotateX / 2;
             const shadowBlur = 20;
-            const shadowColor = `rgba(255, 107, 53, 0.3)`;
+            const shadowColor = `rgba(255, 107, 53, 0.4)`; /* Fire Orange shadow */
             
             this.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px 0px ${shadowColor}`;
         });
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 submitBtn.textContent = originalText;
-                submitBtn.style.background = 'linear-gradient(to right, #6a11cb, #ff6b35)';
+                submitBtn.style.background = 'linear-gradient(to right, #ff6b35, #ff4500)';
                 contactForm.reset();
             }, 3000);
         });
