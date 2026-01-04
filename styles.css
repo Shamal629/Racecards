@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Exo 2', sans-serif;
-    background-color: #0a0a12;
+    background-color: #0a0a12; /* Space Black */
     color: #e0e0e8;
     line-height: 1.6;
     overflow-x: hidden;
@@ -46,7 +46,7 @@ a, button {
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 15px 0;
-    border-bottom: 1px solid rgba(106, 17, 203, 0.3);
+    border-bottom: 1px solid rgba(255, 107, 53, 0.3); /* Fire Orange */
 }
 
 .nav-container {
@@ -66,7 +66,7 @@ a, button {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -87,7 +87,7 @@ a, button {
 }
 
 .nav-menu a:hover {
-    color: #ff6b35;
+    color: #ff6b35; /* Fire Orange */
 }
 
 .nav-menu a::after {
@@ -97,7 +97,7 @@ a, button {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #ff6b35;
+    background-color: #ff6b35; /* Fire Orange */
     transition: width 0.3s ease;
 }
 
@@ -156,7 +156,7 @@ a, button {
     margin-bottom: 20px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -171,8 +171,8 @@ a, button {
 }
 
 @keyframes glow {
-    from { text-shadow: 0 0 5px #6a11cb; }
-    to { text-shadow: 0 0 15px #ff6b35, 0 0 20px rgba(255, 107, 53, 0.5); }
+    from { text-shadow: 0 0 5px rgba(255, 107, 53, 0.5); }
+    to { text-shadow: 0 0 15px #ff6b35, 0 0 20px rgba(255, 107, 53, 0.7); }
 }
 
 .hero-subtitle {
@@ -184,7 +184,7 @@ a, button {
 
 .hero-btn {
     display: inline-block;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     color: #ffffff;
     padding: 15px 40px;
     border-radius: 50px;
@@ -199,7 +199,7 @@ a, button {
 
 .hero-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
 }
 
 /* Section Titles */
@@ -218,7 +218,7 @@ a, button {
     position: absolute;
     width: 100px;
     height: 4px;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
@@ -253,11 +253,11 @@ a, button {
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     border-color: transparent;
     color: #ffffff;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
 }
 
 /* Cards Gallery */
@@ -273,9 +273,11 @@ a, button {
     justify-items: center;
 }
 
+/* Equal sized cards */
 .trading-card {
     width: 100%;
     max-width: 350px;
+    height: 520px; /* Fixed height for equal cards */
     perspective: 1000px;
     margin-bottom: 20px;
 }
@@ -290,19 +292,23 @@ a, button {
 
 .card-front {
     width: 100%;
+    height: 100%;
     background: linear-gradient(145deg, #1a1a2e, #2d2d44);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(106, 17, 203, 0.2);
+    border: 1px solid rgba(255, 107, 53, 0.2); /* Fire Orange */
     position: relative;
     backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-image {
-    height: 220px;
+    height: 220px; /* Fixed image height */
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .card-image img {
@@ -329,56 +335,69 @@ a, button {
 }
 
 .card-content {
-    padding: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .card-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     color: #ffffff;
     letter-spacing: 1px;
     font-family: 'Orbitron', sans-serif;
+    line-height: 1.3;
+    min-height: 2.2em; /* Ensure title takes consistent space */
 }
 
 .card-badge {
     display: inline-block;
-    background: linear-gradient(to right, #6a11cb, #4d0a9a);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     color: #ffffff;
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Rajdhani', sans-serif;
+    align-self: flex-start;
 }
 
-.card-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.stat {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 12px;
+/* Compact stats row */
+.card-stats-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 107, 53, 0.1); /* Fire Orange tint */
     border-radius: 8px;
-    border-left: 3px solid #ff6b35;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
-.stat-label {
-    display: block;
-    font-size: 0.9rem;
-    color: #e0e0e8;
-    margin-bottom: 5px;
-    font-family: 'Exo 2', sans-serif;
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
 }
 
 .stat-value {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #ff6b35; /* Fire Orange */
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 3px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #e0e0e8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-family: 'Rajdhani', sans-serif;
 }
 
@@ -387,40 +406,41 @@ a, button {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 107, 53, 0.1);
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
 .card-price span {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #e0e0e8;
     font-family: 'Exo 2', sans-serif;
 }
 
 .card-price strong {
-    font-size: 1.8rem;
-    color: #ff6b35;
+    font-size: 1.6rem;
+    color: #ff6b35; /* Fire Orange */
     font-family: 'Orbitron', sans-serif;
 }
 
 .view-card-btn {
     display: block;
     width: 100%;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     color: #ffffff;
     text-align: center;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     font-family: 'Rajdhani', sans-serif;
+    margin-top: auto; /* Push button to bottom */
 }
 
 .view-card-btn:hover {
@@ -449,7 +469,7 @@ a, button {
 }
 
 .about-text strong {
-    color: #ff6b35;
+    color: #ff6b35; /* Fire Orange */
 }
 
 .about-stats {
@@ -463,18 +483,18 @@ a, button {
     border-radius: 10px;
     padding: 25px;
     text-align: center;
-    border: 1px solid rgba(106, 17, 203, 0.3);
+    border: 1px solid rgba(255, 107, 53, 0.3); /* Fire Orange */
     transition: transform 0.3s ease;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
-    border-color: #ff6b35;
+    border-color: #ff6b35; /* Fire Orange */
 }
 
 .stat-box h3 {
     font-size: 2.5rem;
-    color: #ff6b35;
+    color: #ff6b35; /* Fire Orange */
     margin-bottom: 10px;
     font-family: 'Orbitron', sans-serif;
 }
@@ -523,7 +543,7 @@ a, button {
 }
 
 .contact-item i {
-    color: #ff6b35;
+    color: #ff6b35; /* Fire Orange */
     font-size: 1.2rem;
     width: 30px;
 }
@@ -554,7 +574,7 @@ a, button {
 }
 
 .social-links a:hover {
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     transform: translateY(-5px);
 }
 
@@ -578,7 +598,7 @@ a, button {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #ff6b35;
+    border-color: #ff6b35; /* Fire Orange */
 }
 
 .contact-form input::placeholder,
@@ -587,7 +607,7 @@ a, button {
 }
 
 .submit-btn {
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     color: #ffffff;
     border: none;
     padding: 15px 40px;
@@ -603,14 +623,14 @@ a, button {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
 }
 
 /* Footer */
 .footer {
     padding: 50px 0 30px;
     background-color: #1a1a2e;
-    border-top: 1px solid rgba(106, 17, 203, 0.3);
+    border-top: 1px solid rgba(255, 107, 53, 0.3); /* Fire Orange */
 }
 
 .footer-content {
@@ -623,7 +643,7 @@ a, button {
 .footer-logo h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    background: linear-gradient(to right, #6a11cb, #ff6b35);
+    background: linear-gradient(to right, #ff6b35, #ff4500); /* Fire Orange gradient */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -653,7 +673,7 @@ a, button {
 }
 
 .footer-links a:hover {
-    color: #ff6b35;
+    color: #ff6b35; /* Fire Orange */
 }
 
 .footer-copyright p {
@@ -679,6 +699,11 @@ a, button {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     
+    .trading-card {
+        max-width: 300px;
+        height: 500px;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -702,7 +727,7 @@ a, button {
         transition: left 0.5s ease;
         gap: 20px;
         text-align: center;
-        border-top: 1px solid rgba(106, 17, 203, 0.3);
+        border-top: 1px solid rgba(255, 107, 53, 0.3); /* Fire Orange */
     }
     
     .nav-menu.active {
@@ -741,6 +766,11 @@ a, button {
     
     .trading-card {
         max-width: 100%;
+        height: 480px;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
     }
     
     .about-stats {
@@ -761,7 +791,15 @@ a, button {
         font-size: 1.8rem;
     }
     
-    .card-stats {
-        grid-template-columns: 1fr;
+    .card-stats-row {
+        padding: 10px;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
     }
 }
