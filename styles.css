@@ -170,10 +170,10 @@ a, button {
     color: #e0e0e8;
 }
 
-@keyframes glow {
+/* @keyframes glow {
     from { text-shadow: 0 0 5px rgba(255, 107, 53, 0.5); }
     to { text-shadow: 0 0 15px #ff6b35, 0 0 20px rgba(255, 107, 53, 0.7); }
-}
+}  */
 
 .hero-subtitle {
     font-size: 1.5rem;
