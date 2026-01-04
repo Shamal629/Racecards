@@ -50,6 +50,28 @@
             overflow: hidden;
         }
         
+        .card-detail-image.placeholder {
+            background-color: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        
+        .card-detail-image.placeholder i {
+            font-size: 5rem;
+            color: rgba(255, 107, 53, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .card-detail-image.placeholder .placeholder-text {
+            color: rgba(255, 107, 53, 0.5);
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
         .card-detail-image img {
             width: 100%;
             height: 100%;
@@ -349,8 +371,9 @@
             </a>
             
             <div class="card-detail-container">
-                <div class="card-detail-image">
-                    <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Lamborghini Huracán">
+                <div class="card-detail-image placeholder">
+                    <i class="fas fa-car"></i>
+                    <div class="placeholder-text">Upload Card Image</div>
                     <div class="image-badge">
                         <span class="flag">ITA 🇮🇹</span>
                         <span class="category">Supercar</span>
@@ -454,7 +477,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h2>Racecards</h2>
-                    <p>Digital Automotive Trading Cards</p>
+                    <p>by Shamal</p>
                 </div>
                 <div class="footer-links">
                     <a href="index.html#cards">Collection</a>
